@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Sound visualizer from mic (letters animated)</title>
+	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+  <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo:700&display=swap" rel="stylesheet">
+  	<link rel="stylesheet" href="./style.css">
+</head>
+
+
+
+<style type="text/css">
+
+    @import url(https://fonts.googleapis.com/css?family=Merriweather:900);
+
+	.wrap{width:100vw; height:100vh; margin:0px; margin-top:0px; position: relative; background: black; }
+  .left1{width:50%; height:90%; float: left; margin-top:0px; position: relative; background:black;  overflow: hidden; font-family: 'Merriweather', serif;}
+  .right1{width:50%; height: 90%; margin-top:0px; margin-right:0px;  position: relative;background:black; float: right;padding-top: 0px;}
+ 
+  .t1{margin-top: 80px; font-size: 30px; font-family: 'Nanum Myeongjo', serif; line-height: 1.6; }
+  .t2{font-family: 'Nanum Myeongjo', serif; }
+  #blank1{width:505px; height:500px; text-align:center; color:black; margin-top:150px; font-family: 'Merriweather', serif; }
+  #black{height:480px; }
+  #show{ cursor: pointer; font-size:30px; line-height: 1.7; height:100%; width:100%; position:absolute; z-index:999; color:white; padding:18%; background: tomato; text-align: left; opacity: 0.95;}
+
+  
+    #t2{position: absolute; font-size: 30px; color: black; font-family: 'Nanum Myeongjo', serif; float:center; width:100%; line-height: 108px; margin:auto; text-align: center; }
+
+    #t3{position: absolute; font-size: 20px; color: black; font-family: 'Nanum Myeongjo', serif; float:left; width:100%; line-height: 108px; margin:auto; text-align: left; }
+    #t4{position: absolute; font-size: 20px; color: black; font-family: 'Nanum Myeongjo', serif; float:left; width:100%; line-height: 50px; margin:auto; text-align: left; }
+
+    .bottom1{width:100%; height:10%; background: white; position: fixed; bottom:0px; margin:0px; position: fixed;}
+    .bottomt1{width:15%; height:100%; margin:0 auto; margin-top:0px; cursor: pointer; float:left; text-align:center; vertical-align: middle; overflow: hidden; margin-bottom: 0px; margin:0px; position: fixed;}
+    .bottomt2{width:100%; height:100%; font-size: 50px; color:black; text-align: center; margin-top:0px; margin-bottom: 0px; cursor: pointer; float:left; overflow: hidden; margin-bottom: 0px; margin:0px; position: fixed;}
+    .bottomt3{width:15%; height:100%; margin:0 auto; padding-top:0px; cursor: pointer; float:right; overflow: hidden; margin-bottom: 0px; vertical-align: middle; text-align: center; margin:0px; position: fixed; right: 0px;}
+a{ height: 0px; }
+  h2{font-size : 40px;}
+
+
+</style>
+<body>
+	<div class="wrap">
+	
+	<div class="left1">
+
+    
+    
+		<!-- partial:index.partial.html -->
+		<h2><div data-splitting>"Chance music" is a system of modern music after the 20th century and has been accidental in composition or performance. It is also called the music of uncertainty.
+John Cage of the U.S. acts like a show that yells on stage, eats food, breaks the piano, and makes noise with speakers, in an exhaustive backlash to art music that is so abstract and precisely composed. Also, in the piano song, 44:33], the pianist leaves the piano after sitting in front of it for only 4 minutes and 33 seconds. In the meantime, music is the sound of outer space and self-pity. This view of Cage is having a lot of impact on the European music scene. Stockhausen is a method in which performers play only a certain part at a free tempo, or compose only a few short pieces, and the performer randomly selects and connects and plays the pieces in the middle. Cage's views were adopted in his work, which later became common. In addition, Polish Penderetsky wrote the orchestra's violin parts in "The Eye of the Sacrifice of Hiroshima" by setting their approximate height and movement without specifying the sound level, which resulted in several string instruments rubbing against each other with differential sound. It is "Graphics" that has further developed the method of writing. contribute to a sheet music, for example This is aimed at the sculptural beauty of the diagram and the creativity of improvisation by the performer, since allowing a very versatile interpretation would require the performer to have no five lines or notes from the beginning. </div></h2>
+
+
+    <script src='https://unpkg.com/splitting/dist/splitting.min.js'></script>
+		<script  src="./script.js"></script>
+
+<button onclick="this.style.display = 'none';" id="show">  <div class="t3"> ⬩ 사용법 ⬩
+</br>    
+</br>
+1. 헤드셋을 착용한다. </br> 2. 이곳을 클릭하고 마이크를 허용한다. </div></button>
+  
+
+
+	
+  </div>
+	
+	<div class="right1">
+	
+  	<span class="section-texts" >
+        <center>
+        <input id="blank1" type="text" size="30" onkeydown="myFunction(event)">
+        </center>
+        <h3 class="t1">
+        <center><strong>*</strong> 흰 박스에 타이핑을 하고 소리를 들어보세요.</br>소리가나지 않는다면 한/영키를 눌러주세요. </br>알파벳으로 인식됩니다.</center>
+        </h3>   
+        </span>
+
+	</div>
+
+</div>
+
+ <div class="bottom1"> 
+    <div class="bottomt1" style="z-index: 999;ø">    
+      <a  href=../music_pre/testt.html>
+    <img src="../image/hand3.png" width="100px" >
+    </a>
+  </div>
+  
+  <div class="bottomt2">
+    <a href=../select/index.html>
+      <h1 id="t2">⬥⠀불확정성 예술 활동⠀⬥</h1>
+    </a>
+  </div>
+
+
+
+
+<audio id="Music1">
+  <source src = "b1.mp3" type="audio/mpeg">
+</audio>
+<audio  id="Music2">
+  <source src = "drum.mp3" type="audio/mpeg">
+</audio>
+<audio  id="Music3">
+  <source src = "g1.mp3" type="audio/mpeg">
+</audio>
+<audio  id="Music4">
+  <source src = "p2.mp3" type="audio/mpeg">
+</audio>
+<audio  id="Music5">
+  <source src = "piano.mp3" type="audio/mpeg">
+</audio>
+<audio  id="Music6">
+  <source src = "v1.mp3" type="audio/mpeg">
+</audio>
+<audio  id="Music7">
+  <source src = "v2.mp3" type="audio/mpeg">
+</audio>
+<audio  id="Music8">
+  <source src = "r1.mp3" type="audio/mpeg">
+</audio>
+<audio  id="Music9">
+  <source src = "r2.mp3" type="audio/mpeg">
+</audio>
+<audio  id="Music10">
+  <source src = "whistle1.mp3" type="audio/mpeg">
+</audio>
+<audio  id="Music11">
+  <source src = "new1.mp3" type="audio/mpeg">
+</audio>
+<audio  id="Music12">
+  <source src = "new2.mp3" type="audio/mpeg">
+</audio>
+<audio  id="Music13">
+  <source src = "new3.mp3" type="audio/mpeg">
+</audio>
+<audio  id="Music14">
+  <source src = "new4.mp3" type="audio/mpeg">
+</audio>
+<audio  id="Music15">
+  <source src = "new5.mp3" type="audio/mpeg">
+</audio>
+<audio  id="Music16">
+  <source src = "new6.mp3" type="audio/mpeg">
+</audio>
+<audio  id="Music17">
+  <source src = "new7.mp3" type="audio/mpeg">
+</audio>
+<audio  id="Music18">
+  <source src = "new8.mp3" type="audio/mpeg">
+</audio>
+<audio  id="Music19">
+  <source src = "new9.mp3" type="audio/mpeg">
+</audio>
+<audio  id="Music20">
+  <source src = "new10.mp3" type="audio/mpeg">
+</audio>
+<audio  id="Music21">
+  <source src = "new11.mp3" type="audio/mpeg">
+</audio>
+<audio  id="Music22">
+  <source src = "new12.mp3" type="audio/mpeg">
+</audio>
+<audio  id="Music23">
+  <source src = "new13.mp3" type="audio/mpeg">
+</audio>
+<audio  id="Music24">
+  <source src = "new14.mp3" type="audio/mpeg">
+</audio>
+<audio  id="Music25">
+  <source src = "new15.mp3" type="audio/mpeg">
+</audio>
+<audio  id="Music26">
+  <source src = "new16.mp3" type="audio/mpeg">
+</audio>
+<audio  id="Music27">
+  <source src = "plus1.mp3" type="audio/mpeg">
+</audio>
+<audio  id="Music28">
+  <source src = "plus2.mp3" type="audio/mpeg">
+</audio>
+<audio  id="Music29">
+  <source src = "plus3.mp3" type="audio/mpeg">
+</audio>
+<audio  id="Music30">
+  <source src = "plus4.mp3" type="audio/mpeg">
+</audio>
+
+
+
+
+<audio loop id="Music_1">
+  <source src = "b1.mp3" type="audio/mpeg">
+</audio>
+<audio loop id="Music_2">
+  <source src = "drum.mp3" type="audio/mpeg">
+</audio>
+<audio loop id="Music_3">
+  <source src = "g1.mp3" type="audio/mpeg">
+</audio>
+<audio loop id="Music_4">
+  <source src = "p2.mp3" type="audio/mpeg">
+</audio>
+<audio loop id="Music_5">
+  <source src = "piano.mp3" type="audio/mpeg">
+</audio>
+<audio loop id="Music_6">
+  <source src = "v1.mp3" type="audio/mpeg">
+</audio>
+<audio loop id="Music_7">
+  <source src = "v2.mp3" type="audio/mpeg">
+</audio>
+<audio loop id="Music_8">
+  <source src = "r1.mp3" type="audio/mpeg">
+</audio>
+<audio loop id="Music_9">
+  <source src = "r2.mp3" type="audio/mpeg">
+</audio>
+<audio loop id="Music_10">
+  <source src = "whistle1.mp3" type="audio/mpeg">
+</audio>
+<audio loop id="Music_11">
+  <source src = "new1.mp3" type="audio/mpeg">
+</audio>
+<audio loop id="Music_12">
+  <source src = "new2.mp3" type="audio/mpeg">
+</audio>
+<audio loop id="Music_13">
+  <source src = "new3.mp3" type="audio/mpeg">
+</audio>
+<audio loop id="Music_14">
+  <source src = "new4.mp3" type="audio/mpeg">
+</audio>
+<audio loop id="Music_15">
+  <source src = "new5.mp3" type="audio/mpeg">
+</audio>
+<audio loop id="Music_16">
+  <source src = "new6.mp3" type="audio/mpeg">
+</audio>
+<audio loop id="Music_17">
+  <source src = "new7.mp3" type="audio/mpeg">
+</audio>
+<audio loop id="Music_18">
+  <source src = "new8.mp3" type="audio/mpeg">
+</audio>
+<audio loop id="Music_19">
+  <source src = "new9.mp3" type="audio/mpeg">
+</audio>
+<audio loop id="Music_20">
+  <source src = "new10.mp3" type="audio/mpeg">
+</audio>
+<audio loop id="Music_21">
+  <source src = "new11.mp3" type="audio/mpeg">
+</audio>
+<audio loop id="Music_22">
+  <source src = "new12.mp3" type="audio/mpeg">
+</audio>
+<audio loop id="Music_23">
+  <source src = "new13.mp3" type="audio/mpeg">
+</audio>
+<audio loop id="Music_24">
+  <source src = "new14.mp3" type="audio/mpeg">
+</audio>
+<audio loop id="Music_25">
+  <source src = "new15.mp3" type="audio/mpeg">
+</audio>
+<audio loop id="Music_26">
+  <source src = "new16.mp3" type="audio/mpeg">
+</audio>
+<audio loop id="Music_27">
+  <source src = "plus1.mp3" type="audio/mpeg">
+</audio>
+<audio loop id="Music_28">
+  <source src = "plus2.mp3" type="audio/mpeg">
+</audio>
+<audio loop id="Music_29">
+  <source src = "plus3.mp3" type="audio/mpeg">
+</audio>
+<audio loop id="Music_30">
+  <source src = "plus4.mp3" type="audio/mpeg">
+</audio>
+
+
+
+
+  <script src='https://unpkg.com/splitting/dist/splitting.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+  
+
+
+</body>
+
+
+
+<script>
+
+
+
+var playing = false;
+
+function myFunction(event) {
+  var x = event.key;
+
+  // If the pressed keyboard button is "a" or "A" (using caps lock or shift), alert some text.
+  
+
+  
+  //음원
+ 
+
+  if (x == "q") {   
+    Music1.play() ;
+   
+  }
+  if ( x == "Q") {
+    console.log("pressed!");
+    if(playing == false){
+      Music_1.play() ;
+      playing = true; 
+      console.log(playing);
+     
+    }else{
+      console.log("paused");
+      Music_1.pause();
+      playing = false;
+     
+    } 
+  }
+
+
+   if (x == "w") { 
+   Music2.play(); 
+   
+  }
+
+   if (x == "W") { 
+   console.log("pressed!");
+   if(playing == false){ 
+   Music_2.play(); 
+   playing = true;
+   console.log(playing);
+ 
+    }else{
+    console.log("paused");
+    Music_2.pause();
+    playing = false;
+   
+      }
+    }
+
+   if (x == "e") { 
+   Music3.play();
+  
+    }
+
+   if (x == "E") { 
+   console.log("pressed!");
+   if(playing == false){ 
+   Music_3.play(); 
+   playing = true;
+   console.log(playing);
+ 
+    }else{
+    console.log("paused");
+    Music_3.pause();
+    playing = false;
+    
+      }
+    }
+
+   if (x == "r") { 
+   Music4.play(); 
+   
+    }
+  if ( x == "R") { 
+   console.log("pressed!");
+   if(playing == false){ 
+   Music_4.play(); 
+   playing = true;
+   console.log(playing);
+  
+    }else{
+    console.log("paused");
+    Music_4.pause();
+    playing = false;
+   
+      }
+    }
+
+   if (x == "t") { 
+   Music5.play(); 
+   
+    } 
+
+   if (x == "T") {
+   console.log("pressed!");
+   if(playing == false){ 
+   Music_5.play(); 
+   playing = true;
+   console.log(playing);
+   
+    }else{
+    console.log("paused");
+    Music_5.pause();
+    playing = false;
+   
+      }
+    }
+
+  if (x == "y") { 
+   Music6.play(); 
+  
+    }
+  if (x == "Y") { 
+  console.log("pressed!");
+   if(playing == false){ 
+   Music_6.play(); 
+   playing = true;
+   console.log(playing);
+   
+    }else{
+    console.log("paused");
+    Music_6.pause();
+    playing = false;
+  
+      }
+    }
+
+  if (x == "u") { 
+   Music7.play(); 
+    }
+  if (x == "U") { 
+   console.log("pressed!");
+   if(playing == false){ 
+   Music_7.play(); 
+   playing = true;
+   console.log(playing);
+  
+    }else{
+    console.log("paused");
+    Music_7.pause();
+    playing = false;
+   
+      } }
+
+  if (x == "i") { 
+   Music8.play(); 
+    }
+  if (x == "I") { 
+   console.log("pressed!");
+   if(playing == false){ 
+   Music_8.play(); 
+   playing = true;
+   console.log(playing);
+  
+    }else{
+    console.log("paused");
+    Music_8.pause();
+    playing = false;
+   
+       }
+     }
+  if (x == "o") { 
+   Music9.play(); 
+    }
+  if (x == "O") { 
+    console.log("pressed!");
+   if(playing == false){ 
+   Music_9.play(); 
+   playing = true;
+   console.log(playing);
+  
+    }else{
+    console.log("paused");
+    Music_9.pause();
+    playing = false;
+    
+      } 
+    }
+
+  if (x == "p") { 
+   Music10.play(); 
+    }
+  
+  if (x == "P") { 
+    console.log("pressed!");
+   if(playing == false){ 
+   Music_10.play(); 
+   playing = true;
+   console.log(playing);
+   
+    }else{
+    console.log("paused");
+    Music_10.pause();
+    playing = false;
+   
+      }
+    }
+
+  if (x == "a") { 
+   Music11.play(); 
+    }
+  
+  if (x == "A") { 
+    console.log("pressed!");
+   if(playing == false){ 
+   Music_11.play(); 
+   playing = true;
+   console.log(playing);
+ 
+    }else{
+    console.log("paused");
+    Music_11.pause();
+    playing = false;
+   
+      }
+    }
+
+  if (x == "s") { 
+   Music12.play(); 
+    }
+  
+  if (x == "S") { 
+    console.log("pressed!");
+   if(playing == false){ 
+   Music_12.play(); 
+   playing = true;
+   console.log(playing);
+   
+    }else{
+    console.log("paused");
+    Music_12.pause();
+    playing = false;
+   
+      }
+    }
+
+  if (x == "d") { 
+   Music13.play(); 
+    }
+  
+  if (x == "D") { 
+    console.log("pressed!");
+   if(playing == false){ 
+   Music_13.play(); 
+   playing = true;
+   console.log(playing);
+  
+    }else{
+    console.log("paused");
+    Music_13.pause();
+    playing = false;
+   
+      }
+     }
+
+
+  if (x == "f") { 
+   Music14.play(); 
+    }
+  
+  if (x == "F") { 
+    console.log("pressed!");
+   if(playing == false){ 
+   Music_14.play(); 
+   playing = true;
+   console.log(playing);
+   
+    }else{
+    console.log("paused");
+    Music_14.pause();
+    playing = false;
+    
+      }
+     }
+
+  if (x == "g") { 
+   Music15.play(); 
+    }
+  
+  if (x == "G") { 
+    console.log("pressed!");
+   if(playing == false){ 
+   Music_15.play(); 
+   playing = true;
+   console.log(playing);
+  
+    }else{
+    console.log("paused");
+    Music_15.pause();
+    playing = false;
+   
+      }
+    }
+
+  if (x == "h") { 
+   Music16.play(); 
+    }
+  
+  if (x == "H") { 
+    console.log("pressed!");
+   if(playing == false){ 
+   Music_16.play(); 
+   playing = true;
+   console.log(playing);
+   
+    }else{
+    console.log("paused");
+    Music_16.pause();
+    playing = false;
+   
+      }
+    }
+
+  if (x == "j") { 
+   Music17.play(); 
+    }
+  
+  if (x == "J") { 
+    console.log("pressed!");
+   if(playing == false){ 
+   Music_17.play(); 
+   playing = true;
+   console.log(playing);
+  
+    }else{
+    console.log("paused");
+    Music_17.pause();
+    playing = false;
+    
+      }  
+    }
+
+  if (x == "k") { 
+   Music18.play(); 
+    }
+  
+  if (x == "K") { 
+    console.log("pressed!");
+   if(playing == false){ 
+   Music_18.play(); 
+   playing = true;
+   console.log(playing);
+  
+    }else{
+    console.log("paused");
+    Music_18.pause();
+    playing = false;
+    
+      }
+    }
+
+  if (x == "l") { 
+   Music19.play(); 
+    }
+  
+  if (x == "L") { 
+    console.log("pressed!");
+   if(playing == false){ 
+   Music_19.play(); 
+   playing = true;
+   console.log(playing);
+  
+    }else{
+    console.log("paused");
+    Music_19.pause();
+    playing = false;
+   
+      }
+    }
+
+  if (x == "z") { 
+   Music20.play(); 
+    }
+  
+  if (x == "Z") { 
+   console.log("pressed!");
+   if(playing == false){ 
+   Music_20.play(); 
+   playing = true;
+   console.log(playing);
+   
+    }else{
+    console.log("paused");
+    Music_20.pause();
+    playing = false;
+   
+      }
+    }
+
+  if (x == "x") { 
+   Music21.play(); 
+    }
+  
+  if (x == "X") { 
+    console.log("pressed!");
+   if(playing == false){ 
+   Music_21.play(); 
+   playing = true;
+   console.log(playing);
+   
+    }else{
+    console.log("paused");
+    Music_21.pause();
+    playing = false;
+    
+      }
+    }
+
+  if (x == "c") { 
+   Music22.play(); 
+    }
+  
+  if (x == "C") { 
+    console.log("pressed!");
+   if(playing == false){ 
+   Music_22.play(); 
+   playing = true;
+   console.log(playing);
+   
+    }else{
+    console.log("paused");
+    Music_22.pause();
+    playing = false;
+    
+      }
+    }
+
+  if (x == "v") { 
+   Music23.play(); 
+    }
+  
+  if (x == "V") { 
+    console.log("pressed!");
+   if(playing == false){ 
+   Music_23.play(); 
+   playing = true;
+   console.log(playing);
+  
+    }else{
+    console.log("paused");
+    Music_23.pause();
+    playing = false;
+  
+      }
+    }
+
+  if (x == "b") { 
+   Music24.play(); 
+    }
+  
+  if (x == "B") { 
+    console.log("pressed!");
+   if(playing == false){ 
+   Music_24.play(); 
+   playing = true;
+   console.log(playing);
+   
+    }else{
+    console.log("paused");
+    Music_24.pause();
+    playing = false;
+  
+      }   }
+
+  if (x == "n") { 
+   Music25.play(); 
+    }
+  
+  if (x == "N") { 
+    console.log("pressed!");
+   if(playing == false){ 
+   Music_25.play(); 
+   playing = true;
+   console.log(playing);
+   
+    }else{
+    console.log("paused");
+    Music_25.pause();
+    playing = false;
+   
+      }
+    }
+
+  if (x == "m") { 
+   Music26.play(); 
+    }
+  
+  if (x == "M") { 
+    console.log("pressed!");
+   if(playing == false){ 
+   Music_26.play(); 
+   playing = true;
+   console.log(playing);
+ 
+    }else{
+    console.log("paused");
+    Music_26.pause();
+    playing = false;
+    
+      }
+    }
+
+if (x == "!") { 
+   Music27.play(); 
+    }
+
+
+
+if (x == ",") { 
+   Music28.play(); 
+    }
+
+
+ if (x == ".") { 
+   Music29.play(); 
+    }
+
+
+ if (x == "?") { 
+   Music30.play(); 
+    }
+
+ }
+
+</script>
+
+</html>

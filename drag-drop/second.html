@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo:700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Arvo|Asap|Mukta|Roboto+Mono:700|Zilla+Slab&display=swap" rel="stylesheet">
+	 <meta charset="UTF-8">
+
+	 <style type="text/css">
+	     @import url(https://fonts.googleapis.com/css?family=Merriweather:900);
+
+	     html{width: 1920px; height: 1080px;}
+	 	#box1{background: white; width: 400px; height : 400px; margin:auto; padding: 50px; font-family: 'Nanum Myeongjo', serif; margin-top: 50px; overflow: scroll;}
+	 	#demo{line-height: 1.5; }
+	 	h1{ font-family: 'Arvo', serif; text-align: center; color:white; font-size: 50px; margin-top: 100px; margin-bottom: 10px;}
+	 	#bu1{font-family: 'Arvo', serif; width: 10%; height:50px; background: white; font-size: 25px; line-height: 50px; color: blue; cursor: pointer; margin:auto; text-align: center; position: absolute; margin-top: 60px; margin-left: 45%; }
+
+	 #t1{position: absolute; font-size: 30px; color: black; font-family: 'Nanum Myeongjo', serif; float:center; width:100%; line-height: 108px; margin:auto; text-align: center; }
+
+    .bottom1{width:100%; height:10%; background: white; position: fixed; bottom:0px; margin:0px; position: fixed;}
+    .bottomt1{width:15%; height:100%; margin:0 auto; margin-top:0px; cursor: pointer; float:left; text-align:center; vertical-align: middle; overflow: hidden; margin-bottom: 0px; margin:0px; position: fixed;}
+    .bottomt2{width:100%; height:100%; font-size: 50px; color:black; text-align: center; margin-top:0px; margin-bottom: 0px; font-family: 'Bitter', serif; cursor: pointer; float:left; overflow: hidden; margin-bottom: 0px; margin:0px; position: fixed;}
+    .bottomt3{width:15%; height:100%; margin:0 auto; padding-top:0px; cursor: pointer; float:right; overflow: hidden; margin-bottom: 0px; vertical-align: middle; text-align: center; margin:0px; position: fixed; right: 0px;}
+
+
+	 </style>
+</head>
+<body style="background: blue; margin:0px;" >
+<h1>Dada Poem</h1>
+<div id="box1"> <h2 id="demo">✒</h2></div>
+	
+
+<button id="bu1" onclick="myFunction()"> CLICK </p></button>
+
+
+
+<div class="bottom1"> 
+    <div class="bottomt1" style="z-index: 999;">    
+      <a href=../drag-drop/index.html>
+    <img src="../image/hand.png" width="100px" >
+    </a>
+  </div>
+  
+  <div class="bottomt2">
+    <a href=../select/index.html>
+      <h1 id="t1">⬥⠀불확정성 예술 활동⠀⬥</h1>
+    </a>
+  </div>
+  
+
+</body>
+<script>
+var k = location.href;
+var z = decodeURI(k);
+var b = z.split("@");
+b.shift();
+
+shuffle(b);
+
+console.log(b);
+
+	function shuffle(a) {
+		    var j, x, i;
+		    for (i = a.length - 1; i > 0; i--) {
+		        j = Math.floor(Math.random() * (i + 1));
+		        x = a[i]; a[i] = a[j]; a[j] = x;
+		    }
+		    return a;
+		}
+
+function myFunction() {
+	demo.innerHTML = "";
+	var k = shuffle(b);
+	for(var i=0; i<k.length; i++){
+		document.getElementById("demo").innerHTML += k[i] + " ";
+			
+	}
+	
+}
+
+
+</script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h1>Poem</h1>
+<h2>장미는</h2>
+</body>
+<script>
+var k = location.href;
+var z = decodeURI(k);
+var b = z.split("@");
+b.shift();
+
+shuffle(b);
+
+console.log(b);
+
+	function shuffle(a) {
+		    var j, x, i;
+		    for (i = a.length - 1; i > 0; i--) {
+		        j = Math.floor(Math.random() * (i + 1));
+		        x = a[i]; a[i] = a[j]; a[j] = x;
+		    }
+		    return a;
+		}
+</script>
+</html>

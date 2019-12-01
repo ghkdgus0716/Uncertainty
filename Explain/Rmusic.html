@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo:700&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Arvo|Asap|Mukta|Roboto+Mono:700|Zilla+Slab&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script scr="script.js"></script>
+  <style type="text/css">
+    @import url(https://fonts.googleapis.com/css?family=Merriweather:900);
+
+    html{width:1920px; height: 1080px;}
+    body{width: 100vw; height: 100vh;
+        background-color:tomato; margin:0px;}
+
+    #topbar{width:100%; height:10%;}
+    #wrap{width:100%; height: 90%; margin:none;}
+
+    #t1{position: absolute; font-size: 30px; color: black; font-family: 'Nanum Myeongjo', serif; float:center; width:100%; line-height: 108px; margin:auto; text-align: center; }
+
+    .bottom1{width:100%; height:10%; background: white; position: fixed; bottom:0px; margin:0px; position: fixed;}
+    .bottomt1{width:15%; height:100%; margin:0 auto; margin-top:0px; cursor: pointer; float:left; text-align:center; vertical-align: middle; overflow: hidden; margin-bottom: 0px; margin:0px; position: fixed;}
+    .bottomt2{width:100%; height:100%; font-size: 50px; color:black; text-align: center; margin-top:0px; margin-bottom: 0px; font-family: 'Bitter', serif; cursor: pointer; float:left; overflow: hidden; margin-bottom: 0px; margin:0px; position: fixed;}
+    .bottomt3{width:15%; height:100%; margin:0 auto; padding-top:0px; cursor: pointer; float:right; overflow: hidden; margin-bottom: 0px; vertical-align: middle; text-align: center; margin:0px; position: fixed; right: 0px;}
+    .bottomt2-1{font-size: 50px; color:black; text-align: center; margin-top:0px; font-family: 'Bitter', serif; text-align:center; vertical-align: middle; margin-bottom: 0px; width:80%; margin:auto;}
+
+
+
+    .shuffle_text{
+        display:none;
+        margin-top:10px;
+        margin-left:180px;
+        margin-right:180px;
+        color:white;
+        font-family: 'Arvo', serif;
+        font-size:28px; 
+        line-height: 1.6;
+        position: absolute;
+
+      }
+    .shuffle_text2{
+        margin-top:10px;
+        margin-left:20%;
+        margin-right:20%;
+        width:60%;
+        display:none;
+        color:white;
+        font-family: 'Nanum Myeongjo', serif;
+        font-size:22px; 
+        line-height: 1.6;
+        position: absolute;
+      }
+    .rand_text{
+        color:#white;
+        border:15px solid yellow;
+        -webkit-filter: blur(2.5px);
+      }
+    h1{text-align: center; color:white ; font-family: 'Arvo', serif;}
+    h2{text-align: center; color:white ; font-family: 'Nanum Myeongjo', serif; margin-top: 400px;  font-size: 30px;}
+  </style>
+</head>
+<body>
+<div id="wrap">
+<div id="topbar"></div>
+<h1><center>Chance Music</center></h1>
+<div class="shuffle_text">
+"Chance music" is a system of modern music after the 20th century and has been accidental in composition or performance. It is also called the music of uncertainty.
+</br>
+John Cage of the United States protested against art music that was so abstract and precisely composed. So John Cage acted like a show on stage, screaming, eating, breaking the piano and making noise with speakers.
+</br>
+On this page you can experience a collection of coincidental sounds, viewing the sounds around you visually and making the visual letters sound.
+ 
+</div>
+<h2><center>우연성 음악</center></h2>
+
+<div class="shuffle_text2">
+'우연성'은 20세기 이후의 현대음악의 체계로 작곡이나 연주에서 우연한 것이었다. 불확실성의 음악이라고도 한다.
+</br>
+미국의 존 케이지(John Cage)는 매우 추상적이고 정확하게 작곡된 예술 음악에 대해 항의했다. 그래서 존 케이지가 무대 위의 쇼처럼 소리지르고, 먹고, 피아노를 깨고, 스피커와 함께 소음을 내는 행동을 했다. 
+</br>
+이 페이지에서는 우연의 소리 모음집을 체험할 수 있으며, 주변의 소리를 시각적으로 보고 시각적인 글자가 소리를 낸다.
+</div>
+
+</div>
+
+  <div class="bottom1"> 
+    <div class="bottomt1">    
+      <a href=../select/index.html>
+    <img src="../image/hand.png" width="100px" >
+    </a>
+  </div>
+  
+  <div class="bottomt2">
+    <a href=../select/index.html>
+      <h1 id="t1">⬥⠀불확정성 예술 활동⠀⬥</h1>
+    </a>
+  </div>
+  
+    <div class="bottomt3">
+    <a href=../music_pre/testt.html>
+    <img src="../image/hand2.png" width="100px">
+    </a>
+  </div>
+
+
+</body>
+
+<script>
+  function shuffle(a) {
+        var j, x, i;
+        for (i = a.length - 1; i > 0; i--) {
+            j = Math.floor(Math.random() * (i + 1));
+            x = a[i]; a[i] = a[j]; a[j] = x;
+        }
+        return a;
+  }
+
+
+
+
+  $(function(){
+    // shaffle text
+    jQuery.fn.extend({
+    shuffleEffect: function(duration) {
+        if(duration == null) duration = 50;
+        var arrLetter = ["A", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "Q", "r", "s", "t", "u", "v", "w", "X", "y", "z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+        var $this = jQuery(this);
+        var strDefault = $this.text();
+        var nLength = strDefault.length - 1;
+        var i = 0;
+        var strText = "";
+        var tid = setInterval(function() {
+            if(i < nLength+1){
+                var strShuffle = "";
+//                for(var j=0; j<nLength-i; j++){
+                var slicedText = strDefault.slice(i,nLength);
+                var term = slicedText.split(' ');
+                for(var j=0; j<term[0].length - 1; j++){
+                    strShuffle += arrLetter[Math.floor(Math.random() * arrLetter.length)];
+                }
+                strText += strDefault.charAt(i);
+//              $this.css({display:"block"}).text(strText + strShuffle);
+              $this.css({display:"block"}).html(strText + "<span class='rand_text'>" + strShuffle + "</span>");
+                i++;
+            } else {
+                clearInterval(tid);
+            }
+        }, duration);
+    }});
+  
+    $('.shuffle_text').shuffleEffect(40);
+    $('.shuffle_text2').shuffleEffect(40);
+      
+})
+
+</script>
+</html>

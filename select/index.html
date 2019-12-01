@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html style="margin: 0px;">
+<head>
+	<title></title>
+	<link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo:700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Bitter:700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Asap|Mukta|Roboto+Mono:700|Zilla+Slab&display=swap" rel="stylesheet">
+	<style type="text/css">
+			body{width: 1920px; height:1080px; margin: 0;}
+			
+			.wrap{width:100vw; height:100vh; margin:0px; margin-top:0px; position: relative; margin: 0px;}
+			#centerI{width:60%; height: 50%; text-align: center; margin:auto; line-height: 1100px;}
+
+			#t1{position: absolute; font-size: 30px; color: black; font-family: 'Nanum Myeongjo', serif; float:center; width:100%; line-height: 108px; margin:auto; text-align: center; }
+			
+			#box1{font-family: 'Arvo', serif; width: 280px; height: 380px; position: absolute; overflow: hidden; background: #f3f3f3; padding: 30px; z-index: 0; top:150px; right:100px; cursor: move; margin: 0px; }
+			#box2{width: 290px; height: 65px; position: absolute; background: #f3f3f3; padding: 30px; z-index: 0; top:580px; right:50px; cursor: move; background-image: url("../image/KlavierstückeⅩ.jpg"); background-repeat: no-repeat; background-size: contain; margin: 0px;}
+			#box3{width: 258px; height: 179px; position: absolute; background: #f3f3f3; padding: 30px; z-index: 0; top:70px; right:390px; cursor: move; margin: 0px; font-size: 40px;  background-image: url("../image/Uncertainty.png"); background-repeat: no-repeat; background-size: contain; margin: 0px;}
+			#box4{width: 250px; height: 250px; position: absolute; background: #f3f3f3; padding: 30px; z-index: 0; top:460px; right:350px; cursor: move; margin: 0px; font-size: 40px;  background-image: url("../image/chance1.png"); background-repeat: no-repeat; background-size: contain; margin: 0px;}
+      #box5{ top:550px; left:1000px; position: absolute; cursor: move; z-index: 0; width: 450px; height: 146px; background-image:url("../image/sticker1.png");  background-repeat: no-repeat; background-size: contain; margin: 0px;}
+      #box6{ top:500px; left:800px; position: absolute; cursor: move; z-index: 0; width: 300px; height:422px; background-image:url("../image/musicp.png");  background-repeat: no-repeat; background-size: contain; margin: 0px;}
+      #box7{ top:500px; left:620px; position: absolute; cursor: move; z-index: 0; width: 300px; height:200px; background-image:url("../image/yellow.png");  background-repeat: no-repeat; background-size: contain; margin: 0px;}
+
+
+
+
+
+      #backt{ margin-top:50px; margin-left:70px; position: absolute;  }
+      
+
+
+			h1{font-size: 15px; line-height: 1.6; position: relative;}
+			h2{font-size: 15px; line-height: 1.8; margin-top: 10%;}
+      p{font-size: 18px; position: absolute; margin-top: 2%; margin-left:80%; font-family: 'Nanum Myeongjo', serif; color:white; opacity: 0.8;}
+			[draggable] {
+ 			 cursor: move;
+				}
+
+
+      #but1{ width: 350px; height: 60px; position: absolute; border-top:2px solid white; border-bottom: 2px solid white; background: black; margin-top: 800px; margin-left: 100px; color:white; color:white; font-family: 'Nanum Myeongjo', serif;  line-height: 60px; font-size: 25px; text-align: left; cursor: pointer;}
+      #but2{ width: 350px; height: 60px; position: absolute; border-top:2px solid white; border-bottom: 2px solid white; background: black; margin-top: 800px; margin-left: 1470px; color:white; font-family: 'Nanum Myeongjo', serif; line-height: 60px; font-size: 25px; text-align: right; cursor: pointer;}
+      #but3{ width: 350px; height: 60px; position: absolute; border-top:2px solid white; border-bottom: 2px solid white; background: black; margin-top: 860px; margin-left: 1470px; color:white; font-family: 'Nanum Myeongjo', serif; line-height: 60px; font-size: 25px; text-align: right; cursor: pointer;}
+
+
+
+      #but1:hover{
+        background: white; color:black;
+      }
+      #but2:hover{
+        background: white; color:black;
+      }
+      #but3:hover{
+        background: white; color:black;
+      }
+
+
+
+
+			.bottom1{width:100%; height:10%; background: white; position: fixed; bottom:0px; margin:0px; }
+  			.bottomt1{width:15%; height:100%; margin:0 auto; margin-top:0px; cursor: pointer; float:left; text-align:center; vertical-align: middle; overflow: hidden; margin-bottom: 0px; margin:0px;}
+  			.bottomt2{width:100%; height:100%; font-size: 50px; color:black; text-align: center; margin-top:0px; margin-bottom: 0px; font-family: 'Bitter', serif; cursor: pointer; float:left; overflow: hidden; margin-bottom: 0px; margin:0px;}
+  			.bottomt3{width:15%; height:100%; margin:0 auto; padding-top:0px; cursor: pointer; float:right; overflow: hidden; margin-bottom: 0px; vertical-align: middle; text-align: center; margin:0px;}
+  			.bottomt2-1{font-size: 50px; color:black; text-align: center; margin-top:0px; font-family: 'Bitter', serif; text-align:center; vertical-align: middle; margin-bottom: 0px; width:80%; margin:auto;}
+
+	</style>
+
+</head>
+<body style="background: black; margin:0px;">
+
+<p> 스티커를 드래그해서 자유롭게 배치해보세요.</p>
+
+<div id="box2" draggable="true">
+</div>
+
+<div id="box4" draggable="true">
+</div>
+
+<div id="box6" draggable="true">
+</div>
+
+<div id="box7" draggable="true">
+</div>
+
+<div id="box3" draggable="true">
+</div>
+
+<div id="box5" draggable="true">
+</div>
+
+
+
+<div id="backt">
+  <img src="../image/backtype.png" style="width: 1300px; height: auto; position: fixed; z-index: -10;" >
+  <img src="../image/title.png" style="width: 900px; height: auto; position: fixed; z-index: -10; margin-top: 100px; margin-left: 50px;" >
+</div>
+
+
+
+
+<div id="box1" draggable="true"  style="position: absolute; ">
+  <h1>Dada Poem</h1>
+  	<div style="width:100%; height: 200px;">
+ 	 <h2 id="word" style="font-family: 'Nanum Myeongjo', serif; ">
+  		random
+ 	 </h2>
+  	</div>
+  <h1 style=" margin-top: 70px;  ">
+  	Uncertainty in Artistic Activities  <br> 1 - 3 Nov . 2019 
+  </h1>
+</div>
+
+
+
+
+
+
+
+<a href=../Intro/index.html>
+<div id="but1">
+  ⠀⬥  ⠀⠀우연성에 대해
+</div>
+</a>
+
+<a href=../Explain/dadapoem.html>
+<div id="but2"> 
+  다다 詩 작법 ⠀⠀ ⬥⠀
+</div>
+</a>
+
+<a href=../Explain/Rmusic.html>
+<div id="but3">  
+  우연성 음악 ⠀⠀ ⬥⠀
+</div>
+</a>
+
+
+
+
+
+ <div class="bottom1"> 
+ <div class="bottomb">
+ </div>    
+	
+	<div class="bottomt2">
+   <h1 id="t1">⬥⠀불확정성 예술 활동⠀⬥</h1>
+	</div>
+  
+  	
+
+  </div>
+
+
+
+<script type="text/javascript">
+    /*text*/
+
+var word = document.getElementById('word');
+
+    var letters = 
+    [ '음악 ','갔다. ','그렇게 ','조용히 ','침묵 ', '어른이 되어 ','조금씩 ', '기쁜 표정 ', '건네줘 ', '비탈길 ', '교묘한 장난 ', '이것도 ', '눈동자 ', '방에 혼자 있을 때 ', '목소리 ', '보고 싶어 ', '오늘따라 ', '떠나잖아 ', '열두시 ', '? ', '동네 ', '늘상 ', '달라진 느낌 ', '왜 ', '이상한 ', '여행 ', '지금 ', '아무런 계획 ', '숨 ', '배낭 ', '겸 ', '잠깐이면 ', '눈빛 ', '해 뜨기 전 ', '영혼 ', '야망 ', '웃음 ', '없어진 ', '현실은 ', '달라져 ', '저녁 ', '그대로 ', '해롱해롱 ', '당최 알 수가 없는 ', '허구한 날 ', '다음 날은 ', '아침부터 저녁까지 ', '무시 ' , '별을 바라보던 ', '우린 ', '며칠이면 ', '사라져 버려 ', '악몽 ','현실 ', '사진 ', '담배 연기 ', '하루 종일 ', '쫒네. ', '진절머리 ',  '머리가 ', '밖을 ', '똑같아. ', '고민거리 ', '고민해 ', '항상 ', '물들어간 ', '보면 ', '필요한 ', '채워지지 않아. ', '교향곡 ', '연주되고 ', '연못 ', '찬란한 ', '반짝거린다. ', '질문에 ', '대답은 ', '빌딩 숲 ', '스쳐지나가는 ', '허무하다. ', '그렇구나 ', '아리송 ', '시나브로 ', '신발 ','... ','그때 ','깊은 ','웃는 모습 ', '갇혀 ', '느낌 ', '의자 ', '주저하며 ', '노래 ','떠나고 ','내렸다. ','태풍 ', '열정 ', '모두 토해냈다. ', '생각났다. ', '마르고 닳도록 ', '머리카락 ', '가자. ', '첫 번째 ', '별이 보일 때 ', '밤 새 ', '길을 걸어가다 ', '손바닥 ', '졸음 ','손이 ','맞잡은 ','자란다. ','끈 ', '피어오른다. ', '상상 속 ', '위로 ', '조심해 ', '묻혀있지 ', '너 나 할 것 없이 ','반지 ','보폭 ','걸음 ','별 ','벽 ','시간 ','가방 ', '떠나가고 ', '잊으며 ','봄 ', '여름 ', '가을 ', '겨울 ','나무 ','꽃 ','땅 위에 ', '관망했다. ', '이름 ', ' 교향곡 ', '노인은 ', '기억한다. ','서리 ', '창문 ','등을 돌렸다. ','위대한 ', '보우하사 ','화려강산 ','아마도 넌 ','하찮은 ', '똑같은 하루 ','피해갔구나. ', '분명 ','한평생 ', '오늘까지 ', '발길을 돌릴 ','새 ', '아리따운 ', '글 ', '글자들 ', '마침표 ', '따사로운 ', '폭풍전야 ', '벗 ', '연인 ', '인연 ', '숙면 ', '수면 위 ', '늘어나는 ', '고해성사 ', '갇혀있는 ', '헤롱거려와 ', '잡을 수도 없지 ', '사라져버려 ', '눈을 뜨면 ','시간 ','인사 ','  ','. ',', ','! ','그저 ','그리고 ','오직 ','어머니 ','시간이 흘러 ','흘렀다. ','죽음 ','온전한 ','파도 ', '대화창 ', '눈치 ','가라앉아', '붓 ','가만히 ', '정적', '침묵','흘러간다.'];
+
+    var skip = 8;
+    var counter = 0;
+    var w = 0;
+    var toggle = "off";
+
+
+var swap = function() {
+    
+  if(counter++ == skip) {
+    randWord = 
+      letters[Math.floor(Math.random()*160)]
+    + letters[Math.floor(Math.random()*158)]
+    + letters[Math.floor(Math.random()*168)]
+    + letters[Math.floor(Math.random()*170)]
+    + letters[Math.floor(Math.random()*152)]
+    + letters[Math.floor(Math.random()*58)]
+    + letters[Math.floor(Math.random()*99)]
+    + letters[Math.floor(Math.random()*96)]
+    + letters[Math.floor(Math.random()*44)]
+    + letters[Math.floor(Math.random()*32)]
+    + letters[Math.floor(Math.random()*91)]
+    + letters[Math.floor(Math.random()*48)]
+    + letters[Math.floor(Math.random()*65)]
+    + letters[Math.floor(Math.random()*73)]
+    + letters[Math.floor(Math.random()*149)]
+    + letters[Math.floor(Math.random()*144)]
+    + letters[Math.floor(Math.random()*141)]
+    + letters[Math.floor(Math.random()*136)]
+    + letters[Math.floor(Math.random()*131)]
+    + letters[Math.floor(Math.random()*126)]
+    + letters[Math.floor(Math.random()*121)]
+    + letters[Math.floor(Math.random()*116)]
+    + letters[Math.floor(Math.random()*111)]
+    + letters[Math.floor(Math.random()*106)]
+    + letters[Math.floor(Math.random()*101)]
+    + letters[Math.floor(Math.random()*96)]
+    + letters[Math.floor(Math.random()*91)]
+    + letters[Math.floor(Math.random()*86)]
+    + letters[Math.floor(Math.random()*81)]
+    + letters[Math.floor(Math.random()*76)]
+    + letters[Math.floor(Math.random()*71)]
+    + letters[Math.floor(Math.random()*66)]
+    + letters[Math.floor(Math.random()*61)]
+    + letters[Math.floor(Math.random()*56)]
+    + letters[Math.floor(Math.random()*51)]
+    + letters[Math.floor(Math.random()*46)]
+    + letters[Math.floor(Math.random()*41)]
+    + letters[Math.floor(Math.random()*36)]
+    + letters[Math.floor(Math.random()*31)]
+    + letters[Math.floor(Math.random()*26)]
+    + letters[Math.floor(Math.random()*21)]
+    + letters[Math.floor(Math.random()*16)]
+    + letters[Math.floor(Math.random()*11)]
+    + letters[Math.floor(Math.random()*6)];
+    word.innerHTML = randWord;
+    word.dataset.text = randWord;
+    
+    counter = 0;
+  }
+  window.requestAnimationFrame(swap);
+}
+
+
+swap();
+    
+
+
+
+
+
+
+  /*drag-drop*/
+
+  (function dragndrop() {
+  let xpos = '';
+  let ypos = '';
+  let whichArt = '';
+
+  function resetZ() {
+    const imgEl = document.querySelectorAll('box1');
+    for (let i = imgEl.length - 1; i >= 0; i--) {
+      imgEl[i].style.zIndex = 5;
+    }
+  }
+  
+  function moveStart(e) {
+    whichArt = e.target;
+    xpos = e.offsetX === undefined ? e.layerX : e.offsetX;
+    ypos = e.offsetY === undefined ? e.layerY : e.offsetY;
+    whichArt.style.zIndex = 10;
+  }
+
+  function moveDragOver(e) {
+    e.preventDefault();
+  }
+
+  function moveDrop(e) {
+    e.preventDefault();
+    whichArt.style.left = e.pageX - xpos + 'px';
+    whichArt.style.top = e.pageY - ypos + 'px';
+  }
+  
+ 
+
+  document.querySelector('body').addEventListener('dragstart', moveStart, false);
+  document.querySelector('body').addEventListener('dragover', moveDragOver, false);
+  document.querySelector('body').addEventListener('drop', moveDrop, false);
+  
+  document.querySelector('body').addEventListener('touchstart', touchStart, false);
+
+})();
+
+</script>
+
+
+
+
+
+</body>
+</html>

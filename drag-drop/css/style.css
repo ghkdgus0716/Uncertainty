@@ -1,0 +1,39 @@
+#done li {
+  text-decoration: underline;
+}
+
+.moving * {
+  color: #BBB;
+}
+
+.drop-zone {
+  padding: 1em 2em;
+  min-height: 2em;
+  height: 250px;
+  font-size: 20px;
+  font-weight: bold;
+
+}
+
+.drop-zone.over {
+  padding: 1em 2em;
+  min-height: 2em;
+  border: 1px solid black;
+
+}
+
+/*dragselect*/
+* {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.ds-selected{
+  outline: 1.5px solid blue;
+  outline-offset: -2px;
+  color: white;
+  background: blue;
+  font-weight: bold;
+}

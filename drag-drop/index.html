@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Drag & drop.</title>
+     
+        <link rel="stylesheet" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo:700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Pridi&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Arvo|Asap|Mukta|Roboto+Mono:700|Zilla+Slab&display=swap" rel="stylesheet">
+    <style type="text/css">
+      @import url(https://fonts.googleapis.com/css?family=Merriweather:900);
+     body{margin: 0px;}
+     .wrap{width:100vw; height:100vh; margin:0px; margin-top:0px; position: relative; margin: 0px;}
+      .drop-zone li{display: block; height:20px; float: left; padding:2px 5px 10px; border-radius: 3px; font-family: 'Nanum Myeongjo', serif;}
+      #topbar{height:50px; width: 100%}
+      #Here{cursor: no-drop; margin-top: 50px;}
+      #nextpage{cursor: pointer; margin-left: 85%; height: 20px; margin-top: 30px; width: 120px;  height: 50px; font-family: 'Arvo', serif; background: black; color:white; font-size: 18px;}
+      #source{text-align: center; color: black; background: white; height: 400px; width: 70%;  margin: auto; overflow: scroll; margin-top: 30px; cursor: pointer;}
+      #target{background: blue; outline: 3px solid white; color:white; height:100px; width: 80%; margin: auto; font-size: 15px;  overflow-x: hidden; overflow-y:scroll;}
+      #buts{margin-left : 70%; width: 500px; height:40px;}
+      #but1{ width:85px; margin: 10px; height:40px; font-family: 'Arvo', serif; background: white; cursor: pointer; font-size: 18px; color:white; background: black;}
+
+
+     #t1{position: absolute; font-size: 30px; color: black; font-family: 'Nanum Myeongjo', serif; float:center; width:100%; line-height: 108px; margin:auto; text-align: center; }
+
+    .bottom1{width:100%; height:10%; background: white; position: fixed; bottom:0px; margin:0px; position: fixed;}
+    .bottomt1{width:15%; height:100%; margin:0 auto; margin-top:0px; cursor: pointer; float:left; text-align:center; vertical-align: middle; overflow: hidden; margin-bottom: 0px; margin:0px; position: fixed;}
+    .bottomt2{width:100%; height:100%; font-size: 50px; color:black; text-align: center; margin-top:0px; margin-bottom: 0px; cursor: pointer; float:left; overflow: hidden; margin-bottom: 0px; margin:0px; position: fixed;}
+    .bottomt3{width:15%; height:100%; margin:0 auto; padding-top:0px; cursor: pointer; float:right; overflow: hidden; margin-bottom: 0px; vertical-align: middle; text-align: center; margin:0px; position: fixed; right: 0px;}
+
+    </style>
+</head>
+
+<body style="background: blue; margin:0px;">
+ 
+
+ <div class="wrap">
+<div id="topbar">
+  
+</div>
+
+  <section id="Select-Word" style="color:white;">
+  <h2 style="text-align: center; font-family: 'Arvo', serif;">Select the words</h2>
+  
+  <div id="buts">
+  <button id="but1" onclick="dragg(1);">Text ➊</button>
+  <button id="but1" onclick="dragg(2);">Text ➋</button>
+  <button id="but1" onclick="dragg(3);">Text ❸</button>
+  </div>
+  
+  <ul class="drop-zone" id="source">
+  </ul>
+
+</section>
+
+
+
+<section id="Here">
+  <h2 style="color: white; text-align: center; font-family: 'Arvo', serif;">Here</h2>
+  <ul class="drop-zone" id="target" >
+  </ul>
+</section>
+
+<button id="nextpage">Next Step</button>
+<p id="entry"> </p>
+
+  
+  <script src='https://thibaultjanbeyer.github.io/DragSelect/ds.min.js'></script>
+  
+
+  
+    <script>
+      nextpage.onclick = function(){
+        var k= target.getElementsByClassName('texts');
+        var trans;
+        for(var i=0; i<k.length;i++){
+          trans = trans + "@" + k[i].innerHTML;
+        }
+        location.href = "second.html?bbb=" + trans;
+      }
+
+      var tt = "사람이란 존재가 무엇인지 아는 사람은 이제 별로 없다. 많은 사람들이 그것을 느끼기는 한다. 그리고 느끼는 만큼 수월하게 죽어 간다. 나도 이 이야기를 다 쓰고 나면 좀 더 수월하게 죽게 될 것이다. 내 자신을 학식이 풍부한 사람이라고는 감히 부를 수 없다. 나는 끊임없이 무언가를 찾는 구도자였으며, 아직도 그렇다. 그러나 이제 별을 쳐다보거나 책을 들여다보며 찾지는 않는다. 내 피가 몸 속에서 소리 내고 있는 그 가르침을 듣기 시작하고 있다. 내 이야기는 유쾌하지 않다. 꾸며 낸 이야기들처럼 달콤하거나 조화롭지 않다. 무의미와 혼란, 착란과 꿈의 맛이 난다. 한 사람 한 사람의 삶은 자기 자신에게로 이르는 길이다. 길의 추구, 오솔길의 암시다. 일찍이 그 어떤 사람도 완전히 자기 자신이 되어 본 적은 없었다. 그럼에도 누구나 자기 자신이 되려고 노력한다. 어떤 사람은 모호하게 어떤 사람은 보다 투명하게, 누구나 그 나름대로 힘껏 노력한다. 누구든 출생의 잔재, 시원의 점액과 알 껍질을 임종까지 지니고 간다. 더러는 결코 사람이 되지 못한 채, 개구리에 그치고 말며, 도마뱀에, 개미에 그치고 만다. 그리고 더러는 위는 사람이고 아래는 물고기인채로 남은 경우도 있다. 그러나 모두가 인간이 되라고 기원하며 자연이 던진 돌인 것이다. 그리고 사람은 모두 유래가 같다. 어머니들이 같다. 우리 모두는 같은 협곡에서 나온다. 똑같이 심연으로부터 비롯된 시도이며 투척이지만 각자가 자기 나름의 목표를 향하여 노력한다. 우리가 서로를 이해할 수는 있다. 그러나 의미를 해석할 수 있는 건 누구나 자기 자신뿐이다.";
+
+
+      var a = "사람이란 존재가 무엇인지 아는 사람은 이제 별로 없다. 많은 사람들이 그것을 느끼기는 한다. 그리고 느끼는 만큼 수월하게 죽어 간다. 나도 이 이야기를 다 쓰고 나면 좀 더 수월하게 죽게 될 것이다. 내 자신을 학식이 풍부한 사람이라고는 감히 부를 수 없다. 나는 끊임없이 무언가를 찾는 구도자였으며, 아직도 그렇다. 그러나 이제 별을 쳐다보거나 책을 들여다보며 찾지는 않는다. 내 피가 몸 속에서 소리 내고 있는 그 가르침을 듣기 시작하고 있다. 내 이야기는 유쾌하지 않다. 꾸며 낸 이야기들처럼 달콤하거나 조화롭지 않다. 무의미와 혼란, 착란과 꿈의 맛이 난다. 한 사람 한 사람의 삶은 자기 자신에게로 이르는 길이다. 길의 추구, 오솔길의 암시다. 일찍이 그 어떤 사람도 완전히 자기 자신이 되어 본 적은 없었다. 그럼에도 누구나 자기 자신이 되려고 노력한다. 어떤 사람은 모호하게 어떤 사람은 보다 투명하게, 누구나 그 나름대로 힘껏 노력한다. 누구든 출생의 잔재, 시원의 점액과 알 껍질을 임종까지 지니고 간다. 더러는 결코 사람이 되지 못한 채, 개구리에 그치고 말며, 도마뱀에, 개미에 그치고 만다. 그리고 더러는 위는 사람이고 아래는 물고기인채로 남은 경우도 있다. 그러나 모두가 인간이 되라고 기원하며 자연이 던진 돌인 것이다. 그리고 사람은 모두 유래가 같다. 어머니들이 같다. 우리 모두는 같은 협곡에서 나온다. 똑같이 심연으로부터 비롯된 시도이며 투척이지만 각자가 자기 나름의 목표를 향하여 노력한다. 우리가 서로를 이해할 수는 있다. 그러나 의미를 해석할 수 있는 건 누구나 자기 자신뿐이다.";
+
+      var b = "[동유럽 가톨릭 성지를 가다] [1] 폴란드 쳉스토호바 폴란드 靈的 수도로 불리는 도시  聖畵 '검은 성모' 모신 수도원은 年 500만명이 찾는 최대 순례지 검은 얼굴에 그어진 두 줄 상처는 폴란드가 겪은 시련의 역사 상징 요즘은 질병으로 고통받는 이들이 치유받기 위해 세계 곳곳서 몰려 폴란드의 남부 도시 쳉스토호바는 이 나라 사람들이 첫손에 꼽는 영적(靈的) 수도다. 인구 규모 19번째(2019년 현재 22만명)에 불과하지만 폴란드 최고의 가톨릭 성지로 불린다. 쳉스토호바 대교구 소속 야스나고라('빛나는 언덕'이란 뜻) 성(聖) 바오로 은수자회 수도원에 모셔진 '검은 성모(BlackMadonna)' 성화(聖畵) 때문이다. 폴란드는 물론 세계 각지에서 해마다 500만명의 순례객이 높이 121.8㎝, 너비 81.3㎝인 성화를 보기 위해 이 수도원을 찾는다. 성모 마리아를 희고 아름답게 표현한 대부분의 그림·조각과 달리 5~8세기에 그려진 것으로 추정되는 야스나고라 수도원의 성모는 얼굴이 검고, 오른쪽 뺨에 두 줄기 깊은 상처가 눈 밑에서 목까지 길게 그어져 있다. 체코 출신 종교개혁가 얀 후스(1369~1415)의 파문과 처형에 반발해 전쟁을 일으킨 추종자들이 1430년 이 수도원에도 들이닥쳐 성모 그림을 내동댕이치고 칼로 그어 생긴 상처다. 이후 여러 화가가 상처를 없애려 했지만 기이하게도 지워지지 않았다. 야스나고라 성 바오로 은수자회 수도원 성당의 새벽 미사. 제단 벽 중앙에 검은 성모의 성화가 걸려 있다. /김태훈 기자 폴란드인들은 신의 섭리가 작용했다고 여긴다. 성모의 검은 얼굴과 뺨에 난 상처가 순례자를 부르는 큰 목소리가 되어 온누리에 퍼져 나갔다. 다리 절고 앞 못 보고 질병으로 고통받는 이들이 자신처럼 고난을 겪은 성모를 찾아와 위로받고 용기를 얻어 돌아갔다. 수도회의 시몬 수사는 지금도 많은 이가 위로와 치유의 은사를 바라며 수도원을 찾는다고 말했다. 지난 23일 새벽 한국천주교주교회의 순례단이 찾아간 수도원 부속 성당은 발 디딜 틈 없이 사람들로 가득 차 있었다. 오전 6시가 되자 팡파르가 울려 퍼지는 가운데 제단 뒷벽에 걸린 성화를 덮은 가림막이 말려 올라갔다. 성모의 얼굴이 드러나자 사람들은 무릎 꿇고 성호를 그었다. 한 여성은 주저앉더니 무릎걸음으로 성화 앞까지 기어가 두 손을 모았다. 성당 왼쪽 벽엔 위로를 구하는 이들이 걸어놓고 간 성물이 반짝였다. 오른쪽 벽엔 목발이 주렁주렁 걸렸다. 치유의 은사를 입은 이들이 놓고 간 것들이라고 했다. 검은 성모가 상처받은 이들만의 어머니였던 것은 아니다. 폴란드 가톨릭의 특징은 신앙이 호국(護國) 정신과 맞닿아 있다는 점이다. 폴란드인들은 검은 성모가 겪은 고난을 그들이 강대국들 틈바구니에서 당한 민족적 시련과 동일시한다. 1655년 스웨덴이 쳐들어오자 폴란드인들은 성화 앞에서 기도하며 싸웠고, 이듬해 당시 국왕 얀 카지미에슈가 검은 성모를 폴란드의 모후이자 수호자로 선포했다. 이후 검은 성모는 나라가 위기에 처할 때마다 민족을 하나로 모으는 구심점이 됐다. 1795년 폴란드가 열강의 분할 점령으로 지도에서 사라진 뒤엔 1918년 독립할 때까지 해방 투쟁의 수호자로 공경받았다. 같은 날 오후 폴란드 옛 수도 크라쿠프 시내에 있는 와기에브니키 자비의 성모 수녀원을 찾았다. 고(故) 요한 바오로 2세 교황에 의해 2000년 밀레니엄 첫 성인품에 오른 '하느님 자비의 사도' 마리아 파우스티나(1905~1938) 수녀가 짧은 생애를 살고 선종한 곳이다. 생전의 파우스티나 수녀에게 환시(幻視)로 나타난 예수는 그녀에게 '하느님의 자비'를 세상에 전하라는 임무를 줬다. 제2차 세계대전 때 고통받던 많은 폴란드인이 찾아와 기도하면서 수녀원은 '자비의 신심'을 전파하는 성지로 거듭났다. 엘리사베트 수녀는 폴란드에서 여아가 태어나면 이름을 파우스티나로 짓는 게 유행일 정도라는 말로 폴란드 가톨릭 교회가 일으킨 새로운 바람을 자랑했다. 자비의 신심은 폴란드 밖으로도 확산돼 십자가에 못 박힌 예수가 숨을 거둔 오후 3시가 되면 세계 곳곳의 가톨릭 교인들이 자비의 기도를 드린다. 요한 바오로 2세 교황은 2001년부터 부활 제2주일을 '하느님의 자비' 주일로 지정했고, 프란치스코 교황도 2015년 12월~2016년 11월을 자비의 특별희년으로 선포했다. 오늘날 유럽 각국 교회는 세속화 물결 속에 교세가 갈수록 위축되고 있다. 그러나 폴란드 가톨릭 교회는 영성의 새로운 가치를 전파하며 꾸준히 성장하고 있다. 신자가 총인구의 97.6%인 3706만4000여명이며 45개 교구에 주교가 157명(추기경 4명, 대주교 33명 포함)에 이른다.";
+
+      var c = "대한민국헌법 [시행 1988. 2. 25.] [헌법 제10호, 1987. 10. 29., 전부개정] 전문 유구한 역사와 전통에 빛나는 우리 대한국민은 3·1운동으로 건립된 대한민국임시정부의 법통과 불의에 항거한 4·19민주이념을 계승하고, 조국의 민주개혁과 평화적 통일의 사명에 입각하여 정의·인도와 동포애로써 민족의 단결을 공고히 하고, 모든 사회적 폐습과 불의를 타파하며, 자율과 조화를 바탕으로 자유민주적 기본질서를 더욱 확고히 하여 정치·경제·사회·문화의 모든 영역에 있어서 각인의 기회를 균등히 하고, 능력을 최고도로 발휘하게 하며, 자유와 권리에 따르는 책임과 의무를 완수하게 하여, 안으로는 국민생활의 균등한 향상을 기하고 밖으로는 항구적인 세계평화와 인류공영에 이바지함으로써 우리들과 우리들의 자손의 안전과 자유와 행복을 영원히 확보할 것을 다짐하면서 1948년 7월 12일에 제정되고 8차에 걸쳐 개정된 헌법을 이제 국회의 의결을 거쳐 국민투표에 의하여 개정한다. 제1장 총강  제1조 ①대한민국은 민주공화국이다. ②대한민국의 주권은 국민에게 있고, 모든 권력은 국민으로부터 나온다.  제2조 ①대한민국의 국민이 되는 요건은 법률로 정한다. ②국가는 법률이 정하는 바에 의하여 재외국민을 보호할 의무를 진다. 제3조 대한민국의 영토는 한반도와 그 부속도서로 한다. 제4조 대한민국은 통일을 지향하며, 자유민주적 기본질서에 입각한 평화적 통일 정책을 수립하고 이를 추진한다. 제5조 ①대한민국은 국제평화의 유지에 노력하고 침략적 전쟁을 부인한다. ②국군은 국가의 안전보장과 국토방위의 신성한 의무를 수행함을 사명으로 하며, 그 정치적 중립성은 준수된다. 제6조 ①헌법에 의하여 체결·공포된 조약과 일반적으로 승인된 국제법규는 국내법과 같은 효력을 가진다. ②외국인은 국제법과 조약이 정하는 바에 의하여 그 지위가 보장된다. 제7조 ①공무원은 국민전체에 대한 봉사자이며, 국민에 대하여 책임을 진다. ②공무원의 신분과 정치적 중립성은 법률이 정하는 바에 의하여 보장된다. 제8조 ①정당의 설립은 자유이며, 복수정당제는 보장된다. ②정당은 그 목적·조직과 활동이 민주적이어야 하며, 국민의 정치적 의사형성에 참여하는데 필요한 조직을 가져야 한다. ③정당은 법률이 정하는 바에 의하여 국가의 보호를 받으며, 국가는 법률이 정하는 바에 의하여 정당운영에 필요한 자금을 보조할 수 있다. ④정당의 목적이나 활동이 민주적 기본질서에 위배될 때에는 정부는 헌법재판소에 그 해산을 제소할 수 있고, 정당은 헌법재판소의 심판에 의하여 해산된다. 제9조 국가는 전통문화의 계승·발전과 민족문화의 창달에 노력하여야 한다.";
+
+      
+
+dragg(1);
+
+function dragg(num){
+      source.innerHTML = "";
+      target.innerHTML = "";
+      if(num == 1){ tt = a;}
+      else if(num == 2){tt = b;}
+      else if(num == 3){ tt = c;};
+
+      var ttSplit = tt.split(" ");
+      for(var i=0; i<ttSplit.length; i++){
+        var l = document.createElement("li");
+        l.draggable = true;
+        l.innerHTML = "<span class='texts'"+">" + ttSplit[i] + "</span>";
+        l.className = "item";
+        source.appendChild(l);
+        
+      }
+
+      new DragSelect({
+        selectables: document.querySelectorAll('.item'),
+        callback: e => toss(e)
+      });
+
+      function toss(k){
+        for(var i=0; i<k.length; i++){
+          document.getElementById("target").appendChild(k[i]);
+        }
+      }
+}
+ 
+    </script>
+    <script  src="js/index.js"></script>
+
+   <div class="bottom1"> 
+    <div class="bottomt1" style="z-index: 999;">    
+      <a href=../Explain/dadapoem.html>
+    <img src="../image/hand.png" width="100px" >
+    </a>
+  </div>
+  
+  <div class="bottomt2">
+    <a href=../select/index.html>
+      <h1 id="t1">⬥⠀불확정성 예술 활동⠀⬥</h1>
+    </a>
+  </div>
+  
+    </div>
+</body>
+
+</html>
